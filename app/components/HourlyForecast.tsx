@@ -13,14 +13,18 @@ export default async function HourlyForecast() {
       {today.map((value, i) => {
         const percentageToFill = Number(((value / TORRENTIAL_RAIN) * 100).toFixed(0));
         const bar = Math.ceil(percentageToFill / 10) * 10
-        const foo = `bg-gradient-to-t from-blue-500 to-${bar || 10}%`
+
+        let foo = `border-2 border-solid rounded-md border-cyan-500 flex items-center justify-center`
+        if (bar) {
+          foo += ` bg-gradient-to-t from-blue-500 to-${bar}%`
+        }
 
         return (
           <div
             key={i}
             className={foo}
           >
-            {value}
+            {value}mm
           </div>
         );
       })}
