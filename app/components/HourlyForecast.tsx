@@ -9,12 +9,12 @@ export default async function HourlyForecast() {
   const today = hourly.precipitation.slice(0, HOURS_IN_DAY)
 
   return (
-    <div>
-      <ul>
-        {today.map((value, i) => {
-          return <li key={i}>{value}</li>;
-        })}
-      </ul>
+    <div className="grid grid-cols-4 gap-4 h-full">
+      {today.map((value, i) => {
+        return (
+          <div key={i} className="bg-blue-500">{value}</div>
+        )
+      })}
     </div>
   );
 }

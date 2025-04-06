@@ -2,11 +2,10 @@ import HourlyForecast from "./components/HourlyForecast";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="h-dvh flex">
+      <main className="h-9/10 w-9/10 mx-auto my-auto">
         <HourlyForecast />
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
     </div>
   );
 }
