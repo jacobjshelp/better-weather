@@ -1,17 +1,28 @@
-import { HourlyData, WeatherData } from "../types";
+import { DAYS_IN_FORECAST, HOURS_IN_DAY } from "../constants";
+import { DailyData, HourlyData, WeatherDataDTO } from "../types";
 
-export default function splitIntoDays(weatherData: WeatherData, split: number): HourlyData[] {
+export default function splitIntoDays(weatherData: WeatherDataDTO, splits: number): DailyData[] {
   const { hourly: allHours } = weatherData
 
-  let result: HourlyData[] = []
+  let allDays: DailyData[] = []
 
-  for (let i = split; i > 0; i--) {
-    const hourlyData: HourlyData = {
-      precipitation: allHours.precipitation.splice(0, Math.ceil(allHours.precipitation.length / i)),
-      precipitation_probability: allHours.precipitation_probability.splice(0, Math.ceil(allHours.precipitation_probability.length / i))
+  for (let i = 0; i < DAYS_IN_FORECAST; i++) {
+    const startIndex = i * HOURS_IN_DAY
+    const dailyData: DailyData = []
+
+    for (let j = 0; j < HOURS_IN_DAY; j++) {
+      const currentIndex = startIndex + j
+      const hourlyData: HourlyData = {
+        precipitation: allHours.precipitation[currentIndex],
+        precipitation_probability: allHours.precipitation_probability[currentIndex],
+        time: allHours.time[currentIndex]
+      }
+
+      dailyData.push(hourlyData)
     }
-    result.push(hourlyData)
+
+    allDays.push(dailyData)
   }
 
-  return result;
+  return allDays;
 }

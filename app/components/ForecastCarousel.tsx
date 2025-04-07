@@ -3,16 +3,15 @@
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
 import * as React from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import { IconButton } from "@material-tailwind/react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import OneDayForecast from "./OneDayForecast";
-import { HourlyData } from "../types";
+import { DailyData } from "../types";
 
 type ForecastCarouselProps = {
-  allDays: HourlyData[]
+  allDays: DailyData[]
 }
 
 export default function ForecastCarousel({ allDays }: ForecastCarouselProps) {
@@ -28,10 +27,9 @@ export default function ForecastCarousel({ allDays }: ForecastCarouselProps) {
         modules={[Navigation, Pagination]}
         className="relative rounded-lg [&_div.swiper-button-next]:text-background [&_div.swiper-button-prev]:text-background h-full"
       >
-        {allDays.map((hourlyData, index) => (
+        {allDays.map((dailyData, index) => (
           <SwiperSlide key={index} className="select-none px-12">
-            <OneDayForecast hourlyData={hourlyData} />
-
+            <OneDayForecast dataForOneDay={dailyData} />
           </SwiperSlide>
         ))}
         <CarouselNavigation />
