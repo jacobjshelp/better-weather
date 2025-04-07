@@ -21,9 +21,6 @@ export default function HourDisplay({
       <div className="flex col-span-2 items-end justify-center font-bold">
         {time}
       </div>
-
-      <div className="flex items-end"></div>
-      <div className="flex items-end ml-auto"></div>
     </div>
   );
 }
