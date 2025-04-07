@@ -1,28 +1,22 @@
-import { HOURS_IN_DAY, TORRENTIAL_RAIN } from "../constants";
+import { HOURS_IN_DAY } from "../constants";
+import calculateGradient from "../functions/calculateGradient";
 import {
   getMockWeatherData,
-  getWeatherData,
 } from "../functions/getWeatherData";
 
 export default async function HourlyForecast() {
   const { hourly } = await getMockWeatherData();
-  const today = hourly.precipitation.slice(0, HOURS_IN_DAY);
+  const todaysPrecipitation = hourly.precipitation.slice(0, HOURS_IN_DAY);
 
   return (
     <div className="grid grid-cols-4 gap-4 h-full">
-      {today.map((value, i) => {
-        const percentageToFill = Number(((value / TORRENTIAL_RAIN) * 100).toFixed(0));
-        const bar = Math.ceil(percentageToFill / 10) * 10
-
-        let foo = `border-2 border-solid rounded-md border-cyan-500 flex items-center justify-center`
-        if (bar) {
-          foo += ` bg-gradient-to-t from-blue-500 to-${bar}%`
-        }
+      {todaysPrecipitation.map((value, i) => {
+        const gradient = calculateGradient(value)
 
         return (
           <div
             key={i}
-            className={foo}
+            className={`border-2 border-solid rounded-md border-cyan-500 flex items-center justify-center ${gradient}`}
           >
             {value}mm
           </div>
