@@ -16,7 +16,7 @@ export default function OneDayForecast({ dataForOneDay }: OneDayForecastProps) {
         return (
           <div
             key={i}
-            className={`p-[2px] border-2 border-solid rounded-md border-cyan-100 grid grid-cols-2 grid-rows-3 text-[12px] ${gradient}`}
+            className={`p-[2px] border-2 border-solid rounded-md border-cyan-100 grid grid-cols-2 grid-rows-3 text-sm ${gradient}`}
           >
             <div className="text-left">
               {precipitation}
@@ -25,7 +25,7 @@ export default function OneDayForecast({ dataForOneDay }: OneDayForecastProps) {
               {probability}
             </div>
 
-            <div className="flex col-span-2 items-center justify-center">
+            <div className="flex col-span-2 items-center justify-center font-bold">
               {hour.time.split("T")[1]}
             </div>
 
