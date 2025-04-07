@@ -1,6 +1,8 @@
 export type WeatherData = {
-  hourly: {
-    precipitation_probability: number[];
-    precipitation: number[];
-  };
+  hourly: HourlyData;
 };
+
+export type HourlyData = {
+  precipitation_probability: number[];
+  precipitation: number[];
+}

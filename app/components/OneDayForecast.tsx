@@ -1,18 +1,14 @@
-import { HOURS_IN_DAY } from "../constants";
 import calculateGradient from "../functions/calculateGradient";
-import { WeatherData } from "../types";
+import { HourlyData, WeatherData } from "../types";
 
 type OneDayForecastProps = {
-  oneDayWeatherData: WeatherData
+  hourlyData: HourlyData
 }
 
-export default async function OneDayForecast({ oneDayWeatherData: weatherData }: OneDayForecastProps) {
-  const { hourly } = weatherData;
-  const todaysPrecipitation = hourly.precipitation.slice(0, HOURS_IN_DAY);
-
+export default function OneDayForecast({ hourlyData }: OneDayForecastProps) {
   return (
     <div className="grid grid-cols-3 gap-4 h-full">
-      {todaysPrecipitation.map((value, i) => {
+      {hourlyData.precipitation.map((value, i) => {
         const gradient = calculateGradient(value)
 
         return (
