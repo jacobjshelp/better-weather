@@ -8,3 +8,13 @@ to-70%
 to-8%
 to-90%
 to-100%
+from-10%
+from-20%
+from-30%
+from-40%
+from-50%
+from-60%
+from-70%
+from-8%
+from-90%
+from-100%

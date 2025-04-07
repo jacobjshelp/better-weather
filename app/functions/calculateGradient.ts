@@ -5,7 +5,7 @@ export default function calculateGradient(rainAmount: number) {
   const roundedToTen = Math.ceil(Number(gradientPercentage) / 10) * 10;
   const gradientClass =
     roundedToTen !== 0
-      ? `bg-gradient-to-t from-blue-500 to-${roundedToTen}%`
-      : "bg-yellow-500 text-black";
+      ? `bg-gradient-to-t from-blue-800 from-${roundedToTen}% to-${roundedToTen}%`
+      : "bg-yellow-400 text-black";
   return gradientClass;
 }

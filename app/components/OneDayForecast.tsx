@@ -7,7 +7,7 @@ type OneDayForecastProps = {
 
 export default function OneDayForecast({ dataForOneDay }: OneDayForecastProps) {
   return (
-    <div className="grid grid-cols-3 gap-2 h-full">
+    <div className="grid grid-cols-3 gap-2 h-9/10">
       {dataForOneDay.map((hour, i) => {
         const gradient = calculateGradient(hour.precipitation);
         const precipitation =
@@ -23,7 +23,7 @@ export default function OneDayForecast({ dataForOneDay }: OneDayForecastProps) {
             <div className="text-left">{precipitation}</div>
             <div className="text-right">{probability}</div>
 
-            <div className="flex col-span-2 items-center justify-center font-bold">
+            <div className="flex col-span-2 items-end justify-center font-bold">
               {hour.time.split("T")[1]}
             </div>
 
