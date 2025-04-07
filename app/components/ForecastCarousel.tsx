@@ -17,7 +17,7 @@ type ForecastCarouselProps = {
 
 export default function ForecastCarousel({ allDays }: ForecastCarouselProps) {
   return (
-    <div className="max-w-[686px]">
+    <div className="h-full">
       <Swiper
         pagination={{
           enabled: true,
@@ -26,10 +26,10 @@ export default function ForecastCarousel({ allDays }: ForecastCarouselProps) {
           renderBullet: carouselPagination,
         }}
         modules={[Navigation, Pagination]}
-        className="relative rounded-lg [&_div.swiper-button-next]:text-background [&_div.swiper-button-prev]:text-background"
+        className="relative rounded-lg [&_div.swiper-button-next]:text-background [&_div.swiper-button-prev]:text-background h-full"
       >
         {allDays.map((hourlyData, index) => (
-          <SwiperSlide key={index} className="select-none">
+          <SwiperSlide key={index} className="select-none px-12">
             <OneDayForecast hourlyData={hourlyData} />
 
           </SwiperSlide>
