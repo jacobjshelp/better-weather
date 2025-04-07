@@ -6,7 +6,7 @@ import splitIntoDays from "./functions/splitIntoDays";
 
 export default async function Home() {
   const weatherData = await getMockWeatherData();
-  const allDays = splitIntoDays(weatherData, DAYS_IN_FORECAST)
+  const allDays = splitIntoDays(weatherData, DAYS_IN_FORECAST);
 
   return (
     <div className="h-dvh flex flex-col font-mono">

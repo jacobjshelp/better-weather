@@ -11,8 +11,8 @@ import OneDayForecast from "./OneDayForecast";
 import { DailyData } from "../types";
 
 type ForecastCarouselProps = {
-  allDays: DailyData[]
-}
+  allDays: DailyData[];
+};
 
 export default function ForecastCarousel({ allDays }: ForecastCarouselProps) {
   return (
@@ -51,7 +51,7 @@ function CarouselNavigation() {
         onClick={() => swiper.slidePrev()}
         className="dark !absolute left-2 top-1/2 z-10 -translate-y-1/2"
       >
-        {'<-'}
+        {"<-"}
       </IconButton>
       <IconButton
         isCircular
@@ -61,7 +61,7 @@ function CarouselNavigation() {
         onClick={() => swiper.slideNext()}
         className="dark !absolute right-2 top-1/2 z-10 -translate-y-1/2"
       >
-        {'->'}
+        {"->"}
       </IconButton>
     </>
   );
