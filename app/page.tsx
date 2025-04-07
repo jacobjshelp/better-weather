@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <div className="h-dvh flex flex-col font-mono">
       <Header />
-      <main className="h-8/10 w-9/10 mx-auto mb-4">
+      <main className="h-9/10 w-9/10 mx-auto">
         <ForecastCarousel allDays={allDays} />
       </main>
     </div>
