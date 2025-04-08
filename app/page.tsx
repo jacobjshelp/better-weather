@@ -1,11 +1,11 @@
 import ForecastCarousel from "./components/ForecastCarousel";
 import Header from "./components/Header";
 import { getMockWeatherData } from "./functions/getWeatherData";
-import splitIntoDays from "./functions/splitIntoDays";
+import mapToDailyData from "./functions/mapToDailyData";
 
 export default async function Home() {
   const weatherData = await getMockWeatherData();
-  const allDays = splitIntoDays(weatherData);
+  const allDays = mapToDailyData(weatherData);
 
   return (
     <div className="h-dvh flex flex-col font-mono">
