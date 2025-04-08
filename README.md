@@ -15,7 +15,7 @@ I chose to deploy the application on Vercel because:
 - Free tier that is perfect for this sort of app (lets not spend unnecessary money on big cloud venders before it is necessary)
 
 ## General code style
-Code readability is a very important code quality for me. I aim at using highly descriptive variable and function names, and also gladly introduce helper variables to increase readability. Also, I like to lean towards the rule of not allowing functions to have more than 5 lines of code, though I am highly practical about this. I rarely write inline comments unless they are absolutely necessary for explaining something, otherwise I think that the naming of the functions should speak for themselves.
+Code readability is a very important code quality for me. I aim at using highly descriptive variable and function names, and also gladly introduce helper variables to increase readability. Also, I like to lean towards the rule of not allowing functions to have more than 5 lines of code, though I am highly practical about this. Same goes for UI components, I try to make them as contained as possible. I rarely write inline comments unless they are absolutely necessary for explaining something, otherwise I think that the naming of the functions should speak for themselves.
 
 ## Testing methodology
 There is a not a lot of hardcore business logic in this app, however for the design of the app to work correctly it is necessary that the mathematical calculations are performed correctly. Because of this I have written unit tests that ensure that the math functions behave as expected.

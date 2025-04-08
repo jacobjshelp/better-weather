@@ -5,7 +5,7 @@ type HourDisplayProps = {
   time: string;
 };
 
-export default function HourDisplay({
+export default function OneHourForecast({
   precipitation,
   probability,
   gradient,
