@@ -29,7 +29,10 @@ export default function ForecastCarousel({ allDays }: ForecastCarouselProps) {
         className="relative rounded-lg [&_div.swiper-button-next]:text-background [&_div.swiper-button-prev]:text-background h-full"
       >
         {allDays.map((dailyData, index) => (
-          <SwiperSlide key={index} className="select-none px-12 h-full overflow-y-scroll">
+          <SwiperSlide
+            key={index}
+            className="select-none px-12 h-full overflow-y-scroll"
+          >
             <DateDisplay date={new Date(dailyData[0].time)} />
             <OneDayForecast dataForOneDay={dailyData} />
           </SwiperSlide>
