@@ -1,5 +1,6 @@
 # For the devs:
-This is a NextJS application designed to be consumed on a smart phone.
+This is a NextJS application written in TypeScript. It uses Tailwind for the styling, and vitest as testing framework. The production build is deployed on Vercel.
+It is intended to be consumed on a smart phone.
 
 ### To run it locally:
 - clone the repo
