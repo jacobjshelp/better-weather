@@ -1,6 +1,6 @@
 import calculateGradient from "../functions/calculateGradient";
 import { HourlyData, WeatherDataDTO } from "../types";
-import HourDisplay from "./HourDisplay";
+import OneHourForecast from "./OneHourForecast";
 
 type OneDayForecastProps = {
   dataForOneDay: HourlyData[];
@@ -8,7 +8,7 @@ type OneDayForecastProps = {
 
 export default function OneDayForecast({ dataForOneDay }: OneDayForecastProps) {
   return (
-    <div className="grid grid-cols-3 gap-2 h-9/10">
+    <div className="grid grid-cols-3 gap-x-2 gap-y-6 h-9/10">
       {dataForOneDay.map((hour, i) => {
         const gradient = calculateGradient(hour.precipitation);
         const precipitation =
@@ -18,7 +18,7 @@ export default function OneDayForecast({ dataForOneDay }: OneDayForecastProps) {
         const time = hour.time.split("T")[1];
 
         return (
-          <HourDisplay
+          <OneHourForecast
             key={i}
             precipitation={precipitation}
             probability={probability}

@@ -1,7 +1,7 @@
 import { DAYS_IN_FORECAST, HOURS_IN_DAY } from "../constants";
 import { DailyData, HourlyData, WeatherDataDTO } from "../types";
 
-export default function splitIntoDays(
+export default function mapToDailyData(
   weatherData: WeatherDataDTO,
 ): DailyData[] {
   const { hourly: allHours } = weatherData;
