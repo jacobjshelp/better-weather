@@ -1,4 +1,20 @@
+# For the devs:
+This is a NextJS application designed to be consumed on a smart phone.
 
+### To run it locally:
+- clone the repo
+- run `npm i` to install dependencies
+- to start app locally run `npm run dev`
+- open a browser and navigate to `localhost:3000`
+
+### Other commands:
+- to run the unit tests run `npm run test`
+- to run prettier run `npm run pretty`
+
+### Making changes:
+Please checkout to a new branch when developing a new feature or bugfix, and create a PR to go into the `main` branch. The pipeline will run and if it succeeds then the merge is allowed. A merge with main triggers a new deployment to Vercel.
+
+# Project information
 ## Overall approach to the project
 I wanted to focus on solving the pain points that the customer (Better Developers) express in their description of the project, in particular that they are tired of unexpected downpours. To solve this I wanted to make a mobile friendly web application that would show what the weather would be like for each day in the next coming days. Also, I wanted to make the design a bit unique, and came up with an idea for a grid layout with boxes that would gradually fill up relative to the amount of downpour at a given hour of the day. This would allow the user to quickly see what hours of the day to stay inside and when it would be "safe" to go outside.
 
@@ -27,6 +43,7 @@ I have added a simple GitHub actions workflow that runs the tests before a merge
 The weather API used is Open-meteo which is a free public API that provides weather data. It was known to the development team at the start of the project, and it gets the job done, thus it was chosen.
 
 ## Future works
+- Add dependabot to the GitHub repo
 - Support more weather metrics than just precipitation
   - Allow the user to select which weather metrics to see in the app
 - Allow the user to provide another location
